@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 🍕 FoodieExpress - Food Delivery</title>
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">🍕 FoodieExpress</h1>
+            <nav class="nav" >
+           
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Contact </a></li>
+      
+    
+
+                <button id="cart-btn" class="cart-btn">
+                    🛒 <span id="cart-count">0</span>
+                </button>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Delicious food, delivered fast</h2>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search restaurants or dishes...">
+                <button id="search-btn">Search</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Restaurant List View -->
+            <section id="restaurant-list" class="section">
+                <h3>Popular Restaurants</h3>
+                <div class="cuisine-filters">
+                    <button class="filter-btn active" data-cuisine="all">All</button>
+                    <button class="filter-btn" data-cuisine="Italian">Italian</button>
+                    <button class="filter-btn" data-cuisine="Indian">Indian</button>
+                    <button class="filter-btn" data-cuisine="Chinese">Chinese</button>
+                    <button class="filter-btn" data-cuisine="Mexican">Mexican</button>
+                     <button class="filter-btn" data-cuisine="Continental">Continental</button>
+                      <button class="filter-btn" data-cuisine="Bakery">Bakery</button>
+                </div>
+                <div id="restaurants-grid" class="restaurants-grid"></div>
+            </section>
+
+
+         
+
+            <!-- Restaurant Menu View -->
+            <section id="restaurant-menu" class="section hidden">
+                <button id="back-btn" class="back-btn">← Back to Restaurants</button>
+                <div id="restaurant-header" class="restaurant-header"></div>
+                <div class="menu-categories">
+                    <button class="category-btn active" data-category="all">All Items</button>
+                    <button class="category-btn" data-category="Appetizer">Appetizers</button>
+                    <button class="category-btn" data-category="Main Course">Main Course</button>
+                    <button class="category-btn" data-category="Dessert">Desserts</button>
+                    <button class="category-btn" data-category="Beverage">Beverages</button>
+                    <button class="category-btn" data-category="Drink">Drinks</button>
+                </div>
+                <div id="menu-items" class="menu-items"></div>
+            </section>
+
+            <!-- Cart View -->
+            <section id="cart-view" class="section hidden">
+                <h3>Your Order</h3>
+                <div id="cart-items" class="cart-items"></div>
+                <div class="cart-summary">
+                    <div class="total">Total: ₹<span id="cart-total">0</span></div>
+                    <button id="checkout-btn" class="checkout-btn">Proceed to Checkout</button>
+                </div>
+            </section>
+
+            <!-- Checkout View -->
+            <section id="checkout-view" class="section hidden">
+                <h3>Checkout</h3>
+                <form id="checkout-form" class="checkout-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Delivery Address</label>
+                        <textarea id="address" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="payment">Payment Method</label>
+                        <select id="payment" required>
+                            <option value="">Select Payment Method</option>
+                            <option value="cod">Cash on Delivery</option>
+                            <option value="card">Credit/Debit Card</option>
+                            <option value="upi">UPI</option>
+                        </select>
+                    </div>
+                    <div class="order-total">Total: ₹<span id="checkout-total">0</span></div>
+                    <button type="submit" class="place-order-btn">Place Order</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar hidden">
+        <div class="cart-header">
+            <h3>Cart</h3>
+            <button id="close-cart">×</button>
+        </div>
+        <div id="sidebar-cart-items" class="sidebar-cart-items"></div>
+        <div class="sidebar-total">
+            Total: ₹<span id="sidebar-total">0</span>
+        </div>
+        <button id="view-cart" class="view-cart-btn">View Cart</button>
+    </div>
+
+    <script src="project.js"></script>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-section company-info">
+      <h3>🍕 FoodieExpress</h3>
+      <p>Fresh meals delivered to your door</p>
+      <p>📍 123 Main St, Your City</p>
+      <p>📞 (555) 123-FOOD</p>
+      <p>✉️ hello@yourfoodstore.com</p>
+    </div>
+    
+    <div class="footer-section quick-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#track">Track Order</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-section customer-care">
+      <h4>Customer Care</h4>
+      <ul>
+        <li><a href="#help">Help Center</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#support">Support</a></li>
+        <li><a href="#feedback">Feedback</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-section connect">
+      <h4>Connect With Us</h4>
+      <div class="social-icons">
+        
+      </div>
+      <div class="app-downloads">
+        <!-- App store buttons -->
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; 2025 YourFoodStore. All rights reserved.</p>
+    <div class="legal-links">
+      <a href="#terms">Terms</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#cookies">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
